@@ -5,7 +5,9 @@ urlpatterns = [
     path("", views.index, name="index"),
     path("wiki/<str:title>", views.entry, name="entry"),
     path("create/", views.create_page, name="create_page"),
+    path("random/", views.random_page, name="random_page"),  # Додайте цей URL
     # Додайте інші URL, які вам потрібно
 ]
+
 
 

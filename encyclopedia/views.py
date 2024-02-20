@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect
 from . import util
 import markdown
-
+import random
 
 def index(request):
     if request.method == "GET":
@@ -53,3 +53,9 @@ def create_page(request):
             return redirect('entry', title=title)
     else:
         return render(request, "encyclopedia/create_page.html")
+
+
+def random_page(request):
+    entries = util.list_entries()
+    random_title = random.choice(entries)
+    return redirect('entry', title=random_title)
